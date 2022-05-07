@@ -3,16 +3,13 @@
 
 TinyEurocat *pMyPlugIn = NULL;
 
-void __declspec ( dllexport )
-    EuroScopePlugInInit ( EuroScopePlugIn :: CPlugIn ** ppPlugInInstance )
+void __declspec ( dllexport ) EuroScopePlugInInit ( EuroScopePlugIn :: CPlugIn **ppPlugInInstance )
 {
-    // allocate
-    * ppPlugInInstance = pMyPlugIn =
-        new TinyEurocat ;
+	// allocate
+	* ppPlugInInstance = pMyPlugIn = new TinyEurocat ;
 }
 
-void __declspec ( dllexport )
-    EuroScopePlugInExit ( void )
+void __declspec ( dllexport ) EuroScopePlugInExit ( void )
 {
 	delete pMyPlugIn ;
 }

@@ -108,6 +108,7 @@
     <ClCompile Include="TinyEurocat.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\lib\EuroScopePlugIn.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TinyEurocat.h" />
   </ItemGroup>
