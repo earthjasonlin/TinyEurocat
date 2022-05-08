@@ -30,9 +30,9 @@ void TinyEurocat::OnGetTagItem( CFlightPlan FlightPlan,
 			char tmpstr[15];
 		case TAG_ITEM_MET_ASS_ALT:
 			maalt = FlightPlan.GetClearedAltitude() * 0.3048;
-			if (maalt > 0)
+			maalt /= 100;
+			if (maalt > 0 && maalt != FlightPlan.GetFinalAltitude() * 0.3048 / 100 && maalt <= 149)
 			{
-				maalt /= 100;
 				if (maalt <= 84)
 				{
 					if (maalt % 3 == 1)
