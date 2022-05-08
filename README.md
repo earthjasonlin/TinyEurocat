@@ -24,3 +24,10 @@ Open OTHER SETS -> TAG Editor, and manually replace default altitude, cleared al
 
  - Current altitude, Cleared altitude and current speed in metric
  - show nohing when cleared altitude is not assigned instead of 0 or crz altitude
+
+### v1.0.2
+
+ - fix current altitude accuracy
+ - fix cleared alt to adapt china rvsm
+ - check if cleared alt is valid to rvsm
+ - remove cleared alt when equals final alt

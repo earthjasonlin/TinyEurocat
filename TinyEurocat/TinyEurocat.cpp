@@ -6,7 +6,7 @@
 
 TinyEurocat::TinyEurocat(void) : CPlugIn ( COMPATIBILITY_CODE,
 	        "TinyEurocat",
-	        "1.0.1",
+	        "1.0.2",
 	        "Future Sim",
 	        "GNU GPL v3.0 +" )
 {
