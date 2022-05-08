@@ -27,15 +27,15 @@ void TinyEurocat::OnGetTagItem( CFlightPlan FlightPlan,
 	int maalt, mcalt, mcspd;
 	switch (ItemCode)
 	{
-		char tmpstr[15];
+			char tmpstr[15];
 		case TAG_ITEM_MET_ASS_ALT:
 			maalt = FlightPlan.GetClearedAltitude() * 0.3048;
-			if(maalt != 0)
+			if (maalt != 0)
 			{
 				maalt /= 100;
-				if(maalt % 3 == 1)
+				if (maalt % 3 == 1)
 					maalt -= 1;
-				else if(maalt % 3 == 2)
+				else if (maalt % 3 == 2)
 					maalt += 1;
 
 				itoa(maalt * 10, tmpstr, 10);
@@ -48,12 +48,13 @@ void TinyEurocat::OnGetTagItem( CFlightPlan FlightPlan,
 			break;
 		case TAG_ITEM_MET_CURR_ALT:
 			mcalt = RadarTarget.GetPosition().GetPressureAltitude() * 0.3048;
-			mcalt /= 100;
-			itoa(mcalt * 10, tmpstr, 10);
+			mcalt /= 10;
+			itoa(mcalt, tmpstr, 10);
 			sprintf(sItemString, "%04s", tmpstr);
 			break;
 		case TAG_ITEM_MET_CURR_SPD:
-			mcspd = RadarTarget.GetGS() * 1.852 / 10;
+			mcspd = RadarTarget.GetGS() * 1.852;
+			mcspd /= 10;
 			itoa(mcspd, tmpstr, 10);
 			sprintf(sItemString, "%03s", tmpstr);
 			break;
