@@ -7,8 +7,8 @@
 TinyEurocat::TinyEurocat(void) : CPlugIn ( COMPATIBILITY_CODE,
 	        "TinyEurocat",
 	        "1.0.2",
-	        "Future Sim",
-	        "GNU GPL v3.0" )
+	        "Future Sim Studio",
+	        "GNU GPL v3" )
 {
 	RegisterTagItemType("Metric / Current Altitude", TAG_ITEM_MET_CURR_ALT);
 	RegisterTagItemType("Metric / Cleared Altitude", TAG_ITEM_MET_ASS_ALT);
