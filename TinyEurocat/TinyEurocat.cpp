@@ -48,7 +48,7 @@ void TinyEurocat::OnGetTagItem( CFlightPlan FlightPlan,
 			sprintf(sItemString, "%04s", tmpstr);
 			break;
 		case TAG_ITEM_MET_CURR_SPD:
-			mcspd = RadarTarget.GetGS() * 1.852;
+			mcspd = RadarTarget.GetPosition().GetReportedGS() * 1.852;
 			mcspd /= 10;
 			itoa(mcspd, tmpstr, 10);
 			sprintf(sItemString, "%03s", tmpstr);
