@@ -33,20 +33,6 @@ void TinyEurocat::OnGetTagItem( CFlightPlan FlightPlan,
 			maalt /= 100;
 			if (maalt > 0 && maalt != int(FlightPlan.GetFinalAltitude() * 0.3048) / 100 && maalt <= 149)
 			{
-				if (maalt <= 84)
-				{
-					if (maalt % 3 == 1)
-						maalt -= 1;
-					else if (maalt % 3 == 2)
-						maalt += 1;
-				}
-				else if (maalt <= 125)
-				{
-					if ((maalt + 1) % 3 == 1)
-						maalt -= 1;
-					else if ((maalt + 1) % 3 == 2)
-						maalt += 1;
-				}
 				itoa(maalt * 10, tmpstr, 10);
 				sprintf(sItemString, "%04s", tmpstr);
 			}
