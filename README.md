@@ -16,7 +16,7 @@ Open OTHER SETS -> TAG Editor, and manually replace default altitude, cleared al
 
 ## Features
  - Current altitude, Cleared altitude and current speed in metric
- - show nohing when cleared altitude is not assigned instead of 0 or crz altitude
+ - show nohing when cleared altitude is 0
 
 ## Changlog
 
@@ -31,3 +31,10 @@ Open OTHER SETS -> TAG Editor, and manually replace default altitude, cleared al
  - fix cleared alt to adapt china rvsm
  - check if cleared alt is valid to rvsm
  - remove cleared alt when equals final alt
+
+## v1.1.1
+
+ - change license and copyright holder
+ - remove force rvsm
+ - change ``GS`` source
+ - change ``CFL`` algorithm
