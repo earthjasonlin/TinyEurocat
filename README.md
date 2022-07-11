@@ -1,6 +1,6 @@
 # TinyEurocat
 
-An simple EuroScope plug-in to simulate THALES Eurocat TAG items
+A simple EuroScope plug-in to simulate THALES Eurocat TAG items
 
 <hr>
 
