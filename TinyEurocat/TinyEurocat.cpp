@@ -12,7 +12,8 @@ TinyEurocat::TinyEurocat(void) : CPlugIn ( COMPATIBILITY_CODE,
 {
 	RegisterTagItemType("Metric / Current Altitude", ITEM_MET_AFL);
 	RegisterTagItemType("Metric / Cleared Altitude", ITEM_MET_CFL);
-	RegisterTagItemType("Metric / Current Speed", ITEM_MET_GS);
+	RegisterTagItemType("Metric / Current Speed (Reported)", ITEM_MET_GS_R);
+	RegisterTagItemType("Metric / Current Speed (Calculated)", ITEM_MET_GS_C);
 }
 
 void TinyEurocat::OnGetTagItem( CFlightPlan FlightPlan,
@@ -45,8 +46,14 @@ void TinyEurocat::OnGetTagItem( CFlightPlan FlightPlan,
 			itoa(mcalt, tmpstr, 10);
 			sprintf(sItemString, "%04s", tmpstr);
 			break;
-		case ITEM_MET_GS:
+		case ITEM_MET_GS_R:
 			mcspd = RadarTarget.GetPosition().GetReportedGS() * 1.852;
+			mcspd /= 10;
+			itoa(mcspd, tmpstr, 10);
+			sprintf(sItemString, "%03s", tmpstr);
+			break;
+		case ITEM_MET_GS_C:
+			mcspd = RadarTarget.GetGS() * 1.852;
 			mcspd /= 10;
 			itoa(mcspd, tmpstr, 10);
 			sprintf(sItemString, "%03s", tmpstr);
