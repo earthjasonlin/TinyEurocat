@@ -42,3 +42,7 @@ Open OTHER SETS -> TAG Editor, and manually replace default altitude, cleared al
  - remove force rvsm
  - change ``GS`` source
  - change ``CFL`` algorithm
+
+## v1.2.1
+
+ - add both ``Reported GS`` and ``Calculated GS``
