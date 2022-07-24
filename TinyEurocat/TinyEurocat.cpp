@@ -6,7 +6,7 @@
 
 TinyEurocat::TinyEurocat(void) : CPlugIn ( COMPATIBILITY_CODE,
 	        "TinyEurocat",
-	        "1.1.1",
+	        "1.2.1",
 	        "Future Sim Studio",
 	        "Copr. 2022 Future Sim Studio" )
 {
