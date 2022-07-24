@@ -10,9 +10,9 @@ TinyEurocat::TinyEurocat(void) : CPlugIn ( COMPATIBILITY_CODE,
 	        "Future Sim Studio",
 	        "Copr. 2022 Future Sim Studio" )
 {
-	RegisterTagItemType("Metric / Current Altitude", TAG_ITEM_MET_CURR_ALT);
-	RegisterTagItemType("Metric / Cleared Altitude", TAG_ITEM_MET_ASS_ALT);
-	RegisterTagItemType("Metric / Current Speed", TAG_ITEM_MET_CURR_SPD);
+	RegisterTagItemType("Metric / Current Altitude", ITEM_MET_AFL);
+	RegisterTagItemType("Metric / Cleared Altitude", ITEM_MET_CFL);
+	RegisterTagItemType("Metric / Current Speed", ITEM_MET_GS);
 }
 
 void TinyEurocat::OnGetTagItem( CFlightPlan FlightPlan,
@@ -24,11 +24,11 @@ void TinyEurocat::OnGetTagItem( CFlightPlan FlightPlan,
                                 COLORREF *pRGB,
                                 double *pFontSize )
 {
-	int maalt, mcalt, mcspd;
 	switch (ItemCode)
 	{
-			char tmpstr[15];
-		case TAG_ITEM_MET_ASS_ALT:
+		int maalt, mcalt, mcspd;
+		char tmpstr[15];
+		case ITEM_MET_CFL:
 			maalt = FlightPlan.GetClearedAltitude() * 0.3048 / 10;
 			if (maalt > 0)
 			{
@@ -40,12 +40,12 @@ void TinyEurocat::OnGetTagItem( CFlightPlan FlightPlan,
 				strcpy(sItemString, "    ");
 			}
 			break;
-		case TAG_ITEM_MET_CURR_ALT:
+		case ITEM_MET_AFL:
 			mcalt = RadarTarget.GetPosition().GetPressureAltitude() * 0.3048 / 10;
 			itoa(mcalt, tmpstr, 10);
 			sprintf(sItemString, "%04s", tmpstr);
 			break;
-		case TAG_ITEM_MET_CURR_SPD:
+		case ITEM_MET_GS:
 			mcspd = RadarTarget.GetPosition().GetReportedGS() * 1.852;
 			mcspd /= 10;
 			itoa(mcspd, tmpstr, 10);
