@@ -18,7 +18,7 @@ Open OTHER SETS -> TAG Editor, and manually replace default altitude, cleared al
  - Current altitude, Cleared altitude and current speed in metric
  - show nohing when cleared altitude is 0
 
-## Changlog
+## Change Log
 
 ### v1.0.1
 
